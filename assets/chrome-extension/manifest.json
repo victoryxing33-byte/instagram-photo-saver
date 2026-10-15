@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram 图片保存",
+  "version": "1.0.0",
+  "description": "在 Instagram 网页上给图片加一个一键保存按钮，点一下就把原图存到本地。",
+  "permissions": ["downloads", "storage"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Instagram 图片保存"
+  }
+}

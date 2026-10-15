@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: -apple-system, "PingFang SC", sans-serif;
+      }
+      body {
+        width: 250px;
+        margin: 0;
+        padding: 14px;
+        font-size: 13px;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 5px 7px;
+        font: inherit;
+        border: 1px solid rgba(128, 128, 128, 0.4);
+        border-radius: 6px;
+        background: transparent;
+        color: inherit;
+      }
+      button {
+        width: 100%;
+        padding: 7px;
+        font: inherit;
+        border: 1px solid rgba(128, 128, 128, 0.4);
+        border-radius: 6px;
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+      }
+      button:hover {
+        border-color: rgba(128, 128, 128, 0.7);
+      }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .hint {
+        margin: 8px 0 0;
+        opacity: 0.6;
+        font-size: 11px;
+        line-height: 1.45;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Instagram 图片保存</h1>
+    <div class="row">
+      <label><input type="checkbox" id="enabled" /> 启用保存按钮</label>
+    </div>
+    <div class="row">
+      <input type="text" id="folder" placeholder="下载文件夹内的子目录" />
+    </div>
+    <button id="open">打开下载文件夹</button>
+    <p class="hint">图片会存到「下载」文件夹下的 Instagram 目录。</p>
+    <script src="popup.js"></script>
+  </body>
+</html>
