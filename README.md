@@ -10,6 +10,40 @@
 2. 点「加载未打包的扩展程序」
 3. 选中本仓库的 `assets/chrome-extension` 文件夹
 4. 刷新 `instagram.com`
+## 如何校对
+
+改完代码后，用下面几步确认它还是能用的。
+
+**1. 文件名规则单测**（零依赖，秒出结果）
+
+```bash
+node scripts/check-filename.mjs
+```
+
+**2. 完整离线演练**（不需要 Instagram 账号）
+
+```bash
+npm i -D playwright
+node scripts/rehearse.mjs
+```
+
+它会起一个仿 Instagram 的页面，把扩展真装进一个临时 Chrome，断言按钮注入、小图跳过、原图尺寸选择和文件落盘。七项全通过才算好。
+
+**3. 仓库与本地是否一致**
+
+```bash
+cd /tmp
+curl -sL -o r.tar.gz https://github.com/victoryxing33-byte/instagram-photo-saver/archive/refs/heads/main.tar.gz
+tar xzf r.tar.gz
+diff -r --exclude=.git <你本地的副本> instagram-photo-saver-main
+```
+
+没有输出即完全一致。
+
+**4. 自己当一次陌生人**
+
+打开仓库首页，只看第一屏：能不能回答「这是什么、我装完能得到什么」。
+再点开 `SKILL.md`，确认里面引用的 `assets/`、`scripts/`、`references/` 路径都能打开。
 
 ## 怎么用
 
