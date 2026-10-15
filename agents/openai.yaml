@@ -1,0 +1,4 @@
+interface:
+  display_name: "Instagram 图片保存"
+  short_description: "给 Chrome 装本地扩展，在 ins 网页一键存原图"
+  default_prompt: "Use $instagram-photo-saver to set up one-click Instagram image saving in Chrome."
